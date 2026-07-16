@@ -15,20 +15,26 @@
 }
 html {
   scroll-behavior: smooth !important;
-  scroll-padding-top: 72px !important; /* Thay 100px bằng đúng 72px */
+  scroll-padding-top: 100px !important; /* Tránh bị thanh menu che mất chữ */
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-  
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-dark);
-  overflow-x:clip ;
+  overflow-x: hidden;
   
   /* TÔN CHỈ: SIÊU MƯỢT - NỀN TRÔI DẠT (AMBIENT DRIFT) TRÊN TÔNG TRẮNG */
   background-color: #f7f7f9 !important;
@@ -1008,16 +1014,4 @@ a {
 html {
   scroll-behavior: smooth !important;
   scroll-padding-top: 100px !important; /* Đẩy nội dung xuống một chút để không bị thanh menu che khuất */
-}
-/* Ép toàn bộ các phần tử không được phép cản trở quá trình cuộn */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: clip; /* Chỉ để clip cho x, đừng để cho y */
-}
-
-/* Đảm bảo không có phần tử nào đang chiếm vị trí 'fixed' gây xung đột với việc cuộn */
-* {
-  box-sizing: border-box;
 }
